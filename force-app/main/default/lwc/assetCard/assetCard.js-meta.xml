@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>48.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <!-- available types https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/components_config_for_flow_tips_map.htm -->
+        <targetConfig targets="lightning__FlowScreen" category="flow stuff">
+            <!--<property name="asset" label="asset object" type="@salesforce/schema/Asset"/>-->
+            <property name="recordId" label="record id" type="String" /> 
+            <!-- <property name="id" label="record id for Field Service App" type="String" /> -->
+        </targetConfig>
+        <!-- 
+            <targetConfig targets="lightning__RecordPage" category="lightning page">
+                <property name="geoLocation" label="Phone location" type="Geolocation" />
+            </targetConfig>
+        -->
+    </targetConfigs>
+</LightningComponentBundle>

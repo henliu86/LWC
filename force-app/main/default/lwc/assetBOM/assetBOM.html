@@ -1,0 +1,13 @@
+<template>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <!--    
+        <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Asset Build of Material (BOM)
+        </h2>
+        -->
+        <div class="slds-p-around_medium lgc-bg">
+            <!--<lightning-button label="Add to Tree" id="change-button" onclick={handleAdd}></lightning-button>-->
+            <lightning-tree items={assetTree} header="Asset Tree" selected-item={selectedId} onselect={handleSelect}></lightning-tree>
+        </div>
+    </div>
+</template>

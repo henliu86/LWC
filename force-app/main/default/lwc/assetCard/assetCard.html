@@ -1,0 +1,48 @@
+<template>
+    <lightning-card>
+        <lightning-card>
+            <p>
+                current record id is: <lightning-formatted-text value={recordId}></lightning-formatted-text>
+            </p>
+            <p>
+                work order asset id is: <lightning-formatted-text value={assetId}></lightning-formatted-text>
+            </p>
+        </lightning-card>
+        
+        <lightning-record-form object-api-name={objectApiName} record-id={assetId} fields={fields} onsuccess={handleSuccess} layout-type="Full" columns="1" style="flex-grow: 1;">
+                <div class="slds-m-around_medium slds-form-element">
+                    
+                    <lightning-input-field field-name='Name'></lightning-input-field>
+                    <lightning-input-field field-name='AccountId' onchange={accountIdChange}></lightning-input-field>
+                    <lightning-input-field field-name='Status'></lightning-input-field>
+                    <lightning-input-field field-name='Temperature'></lightning-input-field>
+                    <div class="slds-m-top_medium">
+                        <lightning-button variant="brand" type="submit" name="save" label="Save Asset"></lightning-button>
+                    </div>
+               </div>
+        </lightning-record-form>
+        
+        
+
+        <lightning-card title="LdsUpdateRecord" icon-name="standard:record">
+            <div class="slds-m-around_medium">
+                <template if:true={assetWireResult}>
+                    <lightning-record-edit-form record-id={assetId} object-api-name={objectApiName} onsubmit={handleSubmit} layout-type="Full">
+                        <lightning-messages>{error}</lightning-messages>
+                        <div class="slds-box slds-theme_default">
+                            <lightning-input label="Name" value={myAssetName} onchange={handleChange}></lightning-input>
+                            <lightning-input label="Account" value={myAssetAccount} onchange={handleChange}></lightning-input>
+                            <lightning-input label="Temperature" value={myAssetTemperature} onchange={handleChange}></lightning-input>
+                            <lightning-input label="Status" value={myAssetStatus} onchange={handleChange}></lightning-input>
+                        </div>
+                    </lightning-record-edit-form>
+                </template>
+                <template if:true={error}>
+                    <!-- handle Apex error -->
+                </template>
+            </div>
+        </lightning-card>
+        
+        
+    </lightning-card>
+</template>

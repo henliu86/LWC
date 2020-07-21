@@ -1,0 +1,6 @@
+.slds-grid_align-center .slds-col {
+    flex-grow: 1 !important;
+}
+.slds-col {
+    flex-grow: 1 !important;
+}
